@@ -1,12 +1,10 @@
-local lib_path = Lib.curPath()
-
-local ClassName = require(lib_path..'Name')
+local ClassName = require('Name')
 
 ---@class ClassParent
 local ClassParent = {}
 local ClassStatic
 function ClassParent.init()
-    ClassStatic = ClassStatic or require(lib_path..'Static')
+    ClassStatic = ClassStatic or require('Static')
 end
 
 local fmt = string.format

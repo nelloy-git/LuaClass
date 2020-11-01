@@ -1,17 +1,13 @@
-local lib_path = Lib.curPath()
-
-local ClassName = require(lib_path..'Name')
-local ClassParent = require(lib_path..'Parent')
-local ClassStatic = require(lib_path..'Static')
-local ClassOverride = require(lib_path..'Override')
-local ClassPublic = require(lib_path..'Public')
-local ClassInstance = require(lib_path..'Instance')
+local ClassName = require('Name')
+local ClassParent = require('Parent')
+local ClassStatic = require('Static')
+local ClassOverride = require('Override')
+local ClassPublic = require('Public')
+local ClassInstance = require('Instance')
 
 ---@class ClassDeclare
 local ClassDeclare = {}
 
-local rawset = rawset
-local fmt = string.format
 local type = type
 
 local class_metatable = {

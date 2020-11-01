@@ -6,26 +6,26 @@ local name2class = {}
 
 -- Created in compiletime.
 local class_first_register = {}
-CompiletimeFinalToRuntime(function()
-    class_first_register = Compiletime(class_first_register)
+BuildFinal(function()
+    class_first_register = Macro(class_first_register)
 end)
 
 ---@param class table
 ---@param name string
 function ClassName.register(class, name)
-    if IsCompiletime() and name2class[name] then
-        error('Class name must be unique. First one registered at '..GetSrcDir()..class_first_register[name], 3)
+    if not IsGame() and name2class[name] then
+        error('Class name must be unique. First one registered at '..GetSrc()..class_first_register[name], 3)
     end
 
     class2name[class] = name
     name2class[name] = class
 
-    if IsCompiletime() then
+    if not IsGame() then
         local info = debug.getinfo(3, "Sl")
         local path = info.source:sub(2)
         --local sep = package.config:sub(1,1)
         path = path:gsub('\\\\', '\\')
-        path = path:gsub(GetSrcDir(), '')
+        path = path:gsub(GetSrc(), '')
         path = path..':'..tostring(info.currentline)
         class_first_register[name] = path
     end

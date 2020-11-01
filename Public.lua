@@ -1,14 +1,10 @@
-local lib_path = Lib.curPath()
-
-local ClassStatic = require(lib_path..'Static')
-local ClassUtils = require(lib_path..'Utils')
-local ClassParent = require(lib_path..'Parent')
+local ClassStatic = require('Static')
+local ClassParent = require('Parent')
 
 ---@class ClassPublic
 local ClassPublic = {}
 
 local rawset = rawset
-local deepcopy = ClassUtils.deepcopy
 
 local class2public = {}
 local public2class = {}

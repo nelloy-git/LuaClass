@@ -1,6 +1,4 @@
-local lib_path = Lib.curPath()
-
-local ClassParent = require(lib_path..'Parent')
+local ClassParent = require('Parent')
 
 ---@class ClassStatic
 local ClassStatic = {}

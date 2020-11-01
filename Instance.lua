@@ -1,7 +1,5 @@
-local lib_path = Lib.curPath()
-
-local ClassName = require(lib_path..'Name')
-local ClassPublic = require(lib_path..'Public')
+local ClassName = require('Name')
+local ClassPublic = require('Public')
 
 ---@class ClassInstance
 local ClassInstance = {}

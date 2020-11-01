@@ -1,5 +1,4 @@
-Lib.start('ClassLib')
-local path = Lib.curPath()
+LibManager.startLib('LuaClass')
 
 --=====
 -- API
@@ -8,18 +7,18 @@ local path = Lib.curPath()
 local ClassLibAPI = {}
 
 ---@type ClassDeclare
-local ClassDeclare = require(path..'Declare')
+local ClassDeclare = require('Declare')
 ---@type ClassName
-local ClassName = require(path..'Name')
+local ClassName = require('Name')
 ---@type ClassParent
-local ClassParent = require(path..'Parent')
+local ClassParent = require('Parent')
 ClassParent.init()
 ---@type ClassPublic
-local ClassPublic = require(path..'Public')
+local ClassPublic = require('Public')
 ---@type ClassInstance
-local ClassInstance = require(path..'Instance')
+local ClassInstance = require('Instance')
 ---@type ClassOverride
-local ClassOverride = require(path..'Override')
+local ClassOverride = require('Override')
 
 ClassLibAPI.new = ClassDeclare.register
 ClassLibAPI.allocate = ClassInstance.allocate
@@ -37,6 +36,6 @@ ClassLibAPI.type = ClassDeclare.type
 
 ClassLibAPI.getInstancesStatistics = ClassInstance.getStatistics
 
-Lib.finish()
+LibManager.endLib()
 
 return ClassLibAPI

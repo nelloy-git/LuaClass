@@ -1,13 +1,10 @@
-local lib_path = Lib.curPath()
-
-local ClassStatic = require(lib_path..'Static')
+local ClassStatic = require('Static')
 
 ---@class ClassOverride
 local ClassOverride = {}
 
 local rawget = rawget
 local rawset = rawset
-local fmt = string.format
 
 local override2class = {}
 local override2static = {}
